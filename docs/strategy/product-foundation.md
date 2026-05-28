@@ -1443,3 +1443,5 @@ The hardened restaurant operations, kitchen workflow, fulfillment queue, deliver
 The hardened frontend, UX, design system, realtime UI, dashboard, mobile-first, accessibility, performance, and design governance model is defined in [`docs/architecture/frontend-ux-design-system-architecture.md`](../architecture/frontend-ux-design-system-architecture.md).
 
 The hardened infrastructure, DevOps, deployment, observability, SRE, disaster recovery, scalability, cost governance, and production operations model is defined in [`docs/architecture/infrastructure-devops-observability-architecture.md`](../architecture/infrastructure-devops-observability-architecture.md).
+
+The hardened data, analytics, BI, experimentation, forecasting, recommendation systems, growth intelligence, and AI readiness model is defined in [`docs/architecture/data-analytics-intelligence-architecture.md`](../architecture/data-analytics-intelligence-architecture.md).
