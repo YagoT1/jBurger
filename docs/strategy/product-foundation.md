@@ -1439,3 +1439,5 @@ The platform security, tenant isolation, IAM, authorization, fraud prevention, c
 The hardened commerce engine, cart, checkout, pricing, promotion, loyalty redemption, delivery fee, payment orchestration, and peak-load protection model is defined in [`docs/architecture/commerce-engine-architecture.md`](../architecture/commerce-engine-architecture.md).
 
 The hardened restaurant operations, kitchen workflow, fulfillment queue, delivery dispatch, staff synchronization, branch resilience, ETA, and peak-hour operations model is defined in [`docs/architecture/restaurant-operations-architecture.md`](../architecture/restaurant-operations-architecture.md).
+
+The hardened frontend, UX, design system, realtime UI, dashboard, mobile-first, accessibility, performance, and design governance model is defined in [`docs/architecture/frontend-ux-design-system-architecture.md`](../architecture/frontend-ux-design-system-architecture.md).
