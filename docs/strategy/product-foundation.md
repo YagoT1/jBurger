@@ -1433,3 +1433,5 @@ This sequence avoids prototype shortcuts by establishing operational truth and s
 ## 42. Architecture Hardening References
 
 The detailed production event-driven, realtime, asynchronous processing, payment reliability, queue, replay, and observability strategy is defined in [`docs/architecture/event-driven-realtime-architecture.md`](../architecture/event-driven-realtime-architecture.md).
+
+The platform security, tenant isolation, IAM, authorization, fraud prevention, compliance, and infrastructure hardening model is defined in [`docs/architecture/security-tenant-isolation-architecture.md`](../architecture/security-tenant-isolation-architecture.md).
