@@ -1,5 +1,7 @@
 # J Burguer — Hardened Data, Analytics, BI, Experimentation, and AI Readiness Architecture
 
+> **Language policy:** This document is governed by `docs/architecture/language-standard-business-spanish-technical-english.md`: business language is Spanish and technical language remains English. Historical English business terms in this document are deprecated in favor of the canonical Spanish glossary.
+
 ## 0. Data Intelligence Architecture Scope
 
 This document defines the production data architecture, analytics ecosystem, business intelligence layer, experimentation platform, recommendation systems, forecasting capabilities, data governance, and AI readiness model for J Burguer.

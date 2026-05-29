@@ -2,6 +2,8 @@
 
 ## 0. Specification Scope
 
+> **Language policy:** This database specification is governed by the mandatory language policy in `docs/architecture/language-standard-business-spanish-technical-english.md`: business table, column, enum, status, event, command, query, DTO, and UX terms must use canonical Spanish identifiers; technical schemas and infrastructure terms remain English.
+
 This document is the canonical database implementation specification for J Burguer. It must be used before writing the first SQL migration. It translates the approved platform, security, tenant isolation, event-driven, commerce, operations, delivery, data, governance, shared-kernel, domain-types, and audit-compliance foundations into an implementation-ready PostgreSQL and Supabase database plan.
 
 This document does not contain SQL migrations. It defines the database architecture, schemas, tables, relationships, RLS model, indexing, partitioning, realtime, storage, event, audit, analytics, governance, backup, recovery, and implementation order required to create safe migrations later.

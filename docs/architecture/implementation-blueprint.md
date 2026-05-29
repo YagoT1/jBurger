@@ -2,6 +2,8 @@
 
 ## 0. Blueprint Scope
 
+> **Language policy:** This blueprint is governed by the mandatory language policy in `docs/architecture/language-standard-business-spanish-technical-english.md`: business language is Spanish and technical language remains English. Any business-domain name shown in older English form is deprecated and must be implemented with the canonical Spanish name from that policy.
+
 This document translates the completed product, commerce, operations, delivery, security, frontend, design system, infrastructure, DevOps, data, and governance architectures into the implementation structure engineers will use before writing production code.
 
 The blueprint defines repository organization, domain boundaries, shared package strategy, frontend and backend layering, database project structure, event and API contracts, testing, security, analytics, observability, CI/CD, naming conventions, dependency rules, scalability rules, and the implementation roadmap.
