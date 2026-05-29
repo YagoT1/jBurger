@@ -1,5 +1,7 @@
 # J Burguer — Hardened Restaurant Operations Architecture
 
+> **Language policy:** This document is governed by `docs/architecture/language-standard-business-spanish-technical-english.md`: business language is Spanish and technical language remains English. Historical English business terms in this document are deprecated in favor of the canonical Spanish glossary.
+
 ## 0. Operations Architecture Scope
 
 This document defines the production restaurant operating system architecture for J Burguer. It hardens branch operations, kitchen workflows, fulfillment queues, staff coordination, delivery dispatch, pickup execution, ETA management, operational alerts, degraded modes, observability, and QA for high-volume food operations.
