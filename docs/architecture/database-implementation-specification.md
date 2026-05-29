@@ -2,6 +2,8 @@
 
 ## 0. Specification Scope
 
+> **P0 hardening:** Database implementation must incorporate `docs/architecture/database-hardening-p0-resolution-specification.md` before SQL generation.
+
 > **Architecture Review Board:** Database implementation must address `docs/architecture/database-architecture-review-board-report.md`; unresolved P0 findings block migration authoring.
 
 > **First migration wave:** The authoritative first migration planning document is `docs/architecture/first-migration-set-specification.md`; SQL migrations must not be written until that Wave 1 specification is approved.

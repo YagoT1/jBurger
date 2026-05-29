@@ -2,6 +2,8 @@
 
 ## 0. Alcance y autoridad
 
+> **P0 hardening:** Wave 1 migrations must incorporate `docs/architecture/database-hardening-p0-resolution-specification.md` before SQL generation.
+
 > **Architecture Review Board:** This migration specification is challenged by `docs/architecture/database-architecture-review-board-report.md`; P0 findings in that report must be resolved before SQL migration authoring begins.
 
 > **Language policy:** Este documento cumple `docs/architecture/language-standard-business-spanish-technical-english.md`: los conceptos de negocio usan español y los conceptos técnicos permanecen en inglés.

@@ -2,6 +2,8 @@
 
 ## 0. Review Mandate
 
+> **P0 hardening:** The required P0 remediation specification is `docs/architecture/database-hardening-p0-resolution-specification.md`; this report remains blocking until those controls are accepted and reflected in migration specs.
+
 > **Language policy:** This review follows `docs/architecture/language-standard-business-spanish-technical-english.md`: business concepts use Spanish and technical concepts remain English.
 
 This document is a hostile Architecture Review Board assessment of the PostgreSQL/Supabase database architecture, the Wave 1 migration specification, and the foundational database direction before implementation begins.
