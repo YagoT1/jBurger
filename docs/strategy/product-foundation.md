@@ -1445,3 +1445,5 @@ The hardened frontend, UX, design system, realtime UI, dashboard, mobile-first, 
 The hardened infrastructure, DevOps, deployment, observability, SRE, disaster recovery, scalability, cost governance, and production operations model is defined in [`docs/architecture/infrastructure-devops-observability-architecture.md`](../architecture/infrastructure-devops-observability-architecture.md).
 
 The hardened data, analytics, BI, experimentation, forecasting, recommendation systems, growth intelligence, and AI readiness model is defined in [`docs/architecture/data-analytics-intelligence-architecture.md`](../architecture/data-analytics-intelligence-architecture.md).
+
+The hardened governance, engineering operations, product operations, release, quality, design operations, ownership, lifecycle, and long-term platform sustainability model is defined in [`docs/architecture/governance-engineering-operations-architecture.md`](../architecture/governance-engineering-operations-architecture.md).
