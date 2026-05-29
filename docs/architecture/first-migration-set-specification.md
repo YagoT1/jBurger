@@ -2,6 +2,8 @@
 
 ## 0. Alcance y autoridad
 
+> **Architecture Review Board:** This migration specification is challenged by `docs/architecture/database-architecture-review-board-report.md`; P0 findings in that report must be resolved before SQL migration authoring begins.
+
 > **Language policy:** Este documento cumple `docs/architecture/language-standard-business-spanish-technical-english.md`: los conceptos de negocio usan español y los conceptos técnicos permanecen en inglés.
 
 Este documento define el **First Migration Set Specification** para la primera ola de migraciones PostgreSQL/Supabase de J Burguer. No contiene SQL, no genera migrations y no define código ejecutable. Es la fuente de verdad para que ingeniería cree las primeras migrations de forma segura, auditable y consistente.

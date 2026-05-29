@@ -2,6 +2,8 @@
 
 ## 0. Specification Scope
 
+> **Architecture Review Board:** Database implementation must address `docs/architecture/database-architecture-review-board-report.md`; unresolved P0 findings block migration authoring.
+
 > **First migration wave:** The authoritative first migration planning document is `docs/architecture/first-migration-set-specification.md`; SQL migrations must not be written until that Wave 1 specification is approved.
 
 > **Language policy:** This database specification is governed by the mandatory language policy in `docs/architecture/language-standard-business-spanish-technical-english.md`: business table, column, enum, status, event, command, query, DTO, and UX terms must use canonical Spanish identifiers; technical schemas and infrastructure terms remain English.
