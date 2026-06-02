@@ -4,6 +4,8 @@
 
 > **UX/UI production blueprint:** Customer-facing and operational experience decisions must also follow `docs/architecture/ux-ui-production-blueprint.md` before visual design or frontend implementation begins.
 
+> **Design system specification:** Visual language, tokens, components, Figma libraries, and frontend design-system integration must follow `docs/architecture/design-system-visual-language-specification.md`.
+
 ## 0. Experience Architecture Scope
 
 This document defines the production frontend, UX, design system, realtime UI, dashboard, mobile, accessibility, performance, observability, and governance architecture for J Burguer.
