@@ -1,5 +1,7 @@
 # J Burguer — Complete Definitive Product Foundation
 
+> **Language policy:** This document is governed by `docs/architecture/language-standard-business-spanish-technical-english.md`: business language is Spanish and technical language remains English. Historical English business terms in this document are deprecated in favor of the canonical Spanish glossary.
+
 ## 0. Executive Product Thesis
 
 J Burguer is a premium burger food-tech ecosystem designed to operate as both a high-converting customer commerce product and a realtime restaurant operating system. The platform is not a static restaurant website; it is a mobile-first digital ordering, loyalty, kitchen orchestration, branch operations, and growth infrastructure layer for a modern burger brand.

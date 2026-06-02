@@ -1,5 +1,7 @@
 # J Burguer — Enterprise Security and Tenant Isolation Architecture
 
+> **Language policy:** This document is governed by `docs/architecture/language-standard-business-spanish-technical-english.md`: business language is Spanish and technical language remains English. Historical English business terms in this document are deprecated in favor of the canonical Spanish glossary.
+
 ## 0. Security Scope
 
 This document defines the production security, tenant isolation, identity, authorization, infrastructure protection, fraud prevention, compliance, audit, and resilience architecture for the J Burguer food-tech platform.

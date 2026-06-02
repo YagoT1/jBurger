@@ -1,5 +1,7 @@
 # J Burguer — Hardened Commerce Engine Architecture
 
+> **Language policy:** This document is governed by `docs/architecture/language-standard-business-spanish-technical-english.md`: business language is Spanish and technical language remains English. Historical English business terms in this document are deprecated in favor of the canonical Spanish glossary.
+
 ## 0. Commerce Engine Scope
 
 This document defines the production-grade commerce engine architecture for J Burguer. It hardens cart, checkout, pricing, promotions, loyalty redemption, branch fulfillment, delivery pricing, payment orchestration, realtime synchronization, operational capacity, fraud controls, observability, and QA for a food-commerce operating system.
