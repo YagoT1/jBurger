@@ -1,5 +1,7 @@
 # J Burguer — Hardened Event-Driven and Realtime Architecture
 
+> **Language policy:** This document is governed by `docs/architecture/language-standard-business-spanish-technical-english.md`: business language is Spanish and technical language remains English. Historical English business terms in this document are deprecated in favor of the canonical Spanish glossary.
+
 ## 0. Architecture Scope
 
 This document hardens the J Burguer platform foundation with a production-grade event-driven, realtime, asynchronous, and synchronization architecture for commerce, kitchen operations, delivery, payments, loyalty, notifications, analytics, and multi-branch operations.
