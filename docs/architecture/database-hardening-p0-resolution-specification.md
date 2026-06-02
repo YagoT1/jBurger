@@ -2,6 +2,8 @@
 
 ## 0. Alcance y autoridad
 
+> **SQL implementation plan:** The migration breakdown that implements this hardening layer is `docs/architecture/wave1-sql-migration-implementation-plan.md`.
+
 > **Language policy:** Este documento cumple `docs/architecture/language-standard-business-spanish-technical-english.md`: negocio en español, técnica en inglés.
 
 Este documento es la especificación obligatoria de hardening que resuelve los hallazgos P0 del Architecture Review Board antes de generar SQL migrations. No rediseña el producto, no crea nuevos dominios, no genera SQL, no genera migrations y no contiene código. Define decisiones de implementación que deben incorporarse en `docs/architecture/database-implementation-specification.md` y `docs/architecture/first-migration-set-specification.md` antes de Prompt 13 — SQL Migration Generation.

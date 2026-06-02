@@ -2,6 +2,8 @@
 
 ## 0. Alcance y autoridad
 
+> **SQL implementation plan:** The exact Wave 1 SQL file breakdown is defined in `docs/architecture/wave1-sql-migration-implementation-plan.md`; migration files must follow that sequence.
+
 > **P0 hardening:** Wave 1 migrations must incorporate `docs/architecture/database-hardening-p0-resolution-specification.md` before SQL generation.
 
 > **Architecture Review Board:** This migration specification is challenged by `docs/architecture/database-architecture-review-board-report.md`; P0 findings in that report must be resolved before SQL migration authoring begins.

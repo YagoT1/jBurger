@@ -2,6 +2,8 @@
 
 ## 0. Specification Scope
 
+> **SQL implementation plan:** Wave 1 SQL authoring must follow `docs/architecture/wave1-sql-migration-implementation-plan.md`.
+
 > **P0 hardening:** Database implementation must incorporate `docs/architecture/database-hardening-p0-resolution-specification.md` before SQL generation.
 
 > **Architecture Review Board:** Database implementation must address `docs/architecture/database-architecture-review-board-report.md`; unresolved P0 findings block migration authoring.
