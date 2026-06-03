@@ -1,0 +1,28 @@
+-- Foundation schema: multi-tenant, RLS-ready, audit-ready
+create extension if not exists pgcrypto;
+create table if not exists public.tenants (id uuid primary key default gen_random_uuid(), slug text not null unique, nombre text not null, created_at timestamptz not null default now(), updated_at timestamptz not null default now());
+create table if not exists public.branches (id uuid primary key default gen_random_uuid(), tenant_id uuid not null references public.tenants(id) on delete cascade, nombre text not null, address jsonb not null default '{}'::jsonb, active boolean not null default true, created_at timestamptz not null default now(), updated_at timestamptz not null default now());
+create table if not exists public.users (id uuid primary key default gen_random_uuid(), tenant_id uuid not null references public.tenants(id) on delete cascade, email text not null, nombre text not null, active boolean not null default true, created_at timestamptz not null default now(), updated_at timestamptz not null default now(), unique (tenant_id, email));
+create table if not exists public.roles (id uuid primary key default gen_random_uuid(), tenant_id uuid not null references public.tenants(id) on delete cascade, nombre text not null, descripcion text, created_at timestamptz not null default now(), updated_at timestamptz not null default now(), unique (tenant_id, nombre));
+create table if not exists public.permissions (id uuid primary key default gen_random_uuid(), key text not null unique, resource text not null, action text not null, descripcion text);
+create table if not exists public.role_permissions (role_id uuid not null references public.roles(id) on delete cascade, permission_id uuid not null references public.permissions(id) on delete cascade, primary key (role_id, permission_id));
+create table if not exists public.user_roles (user_id uuid not null references public.users(id) on delete cascade, role_id uuid not null references public.roles(id) on delete cascade, primary key (user_id, role_id));
+create table if not exists public.audit_events (id uuid primary key default gen_random_uuid(), tenant_id uuid references public.tenants(id) on delete set null, actor_id uuid, action text not null, resource text not null, resource_id uuid, metadata jsonb not null default '{}'::jsonb, occurred_at timestamptz not null default now());
+create index if not exists idx_branches_tenant on public.branches(tenant_id);
+create index if not exists idx_users_tenant on public.users(tenant_id);
+create index if not exists idx_roles_tenant on public.roles(tenant_id);
+create index if not exists idx_audit_events_tenant_occurred on public.audit_events(tenant_id, occurred_at desc);
+alter table public.tenants enable row level security;
+alter table public.branches enable row level security;
+alter table public.users enable row level security;
+alter table public.roles enable row level security;
+alter table public.permissions enable row level security;
+alter table public.role_permissions enable row level security;
+alter table public.user_roles enable row level security;
+alter table public.audit_events enable row level security;
+create or replace function public.current_tenant_id() returns uuid language sql stable as $$ select nullif(current_setting('request.jwt.claims', true)::jsonb ->> 'tenant_id', '')::uuid $$;
+create policy tenant_isolation_select on public.tenants for select using (id = public.current_tenant_id());
+create policy branch_tenant_select on public.branches for select using (tenant_id = public.current_tenant_id());
+create policy user_tenant_select on public.users for select using (tenant_id = public.current_tenant_id());
+create policy role_tenant_select on public.roles for select using (tenant_id = public.current_tenant_id());
+create policy audit_tenant_select on public.audit_events for select using (tenant_id = public.current_tenant_id());

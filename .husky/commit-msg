@@ -1,0 +1,1 @@
+node -e "const msg=require('fs').readFileSync(process.argv[1],'utf8').trim(); if(!/^(feat|fix|docs|style|refactor|test|chore|build|ci)(\(.+\))?: .{1,100}/.test(msg)){console.error('Commit message must follow Conventional Commits.'); process.exit(1)}" "$1"

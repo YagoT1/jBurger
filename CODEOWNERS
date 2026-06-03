@@ -1,0 +1,5 @@
+# Placeholder ownership map for Wave 1 hardening
+/apps/ @frontend-architecture
+/services/api/ @backend-architecture @security-architecture
+/packages/ @platform-architecture
+/supabase/ @database-architecture @security-architecture
