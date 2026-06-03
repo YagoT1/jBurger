@@ -1,5 +1,7 @@
 # J Burguer — Hardened Infrastructure, DevOps, Observability, and SRE Architecture
 
+> **Language policy:** This document is governed by `docs/architecture/language-standard-business-spanish-technical-english.md`: business language is Spanish and technical language remains English. Historical English business terms in this document are deprecated in favor of the canonical Spanish glossary.
+
 ## 0. Infrastructure Architecture Scope
 
 This document defines the production infrastructure, DevOps, observability, deployment, reliability, scalability, disaster recovery, cost governance, and SRE operating model for J Burguer.

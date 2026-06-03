@@ -1,5 +1,7 @@
 # Governance, Engineering Operations, and Platform Sustainability Architecture
 
+> **Language policy:** This document is governed by `docs/architecture/language-standard-business-spanish-technical-english.md`: business language is Spanish and technical language remains English. Historical English business terms in this document are deprecated in favor of the canonical Spanish glossary.
+
 ## 0. Scope, Authority, and Non-Negotiable Operating Principles
 
 This document defines the organizational operating system required to sustain the J Burguer platform as a production-grade food-tech ecosystem. It governs how product, design, engineering, security, data, reliability, and operations evolve the platform without architectural drift, ownership ambiguity, unsafe releases, or undocumented institutional knowledge.

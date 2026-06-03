@@ -1,5 +1,13 @@
 # J Burguer — Hardened Frontend, UX, and Design System Architecture
 
+> **Language policy:** This document is governed by `docs/architecture/language-standard-business-spanish-technical-english.md`: business language is Spanish and technical language remains English. Historical English business terms in this document are deprecated in favor of the canonical Spanish glossary.
+
+> **UX/UI production blueprint:** Customer-facing and operational experience decisions must also follow `docs/architecture/ux-ui-production-blueprint.md` before visual design or frontend implementation begins.
+
+> **Design system specification:** Visual language, tokens, components, Figma libraries, and frontend design-system integration must follow `docs/architecture/design-system-visual-language-specification.md`.
+
+> **Frontend implementation blueprint:** Application structure, App Router routing, feature/domain/component boundaries, state, data access, auth, testing, security, observability, governance, and roadmap must follow `docs/architecture/frontend-implementation-blueprint.md`.
+
 ## 0. Experience Architecture Scope
 
 This document defines the production frontend, UX, design system, realtime UI, dashboard, mobile, accessibility, performance, observability, and governance architecture for J Burguer.
