@@ -1,0 +1,1 @@
+insert into public.permissions (key, resource, action, descripcion) values ('users:read','users','read','Leer usuarios'), ('roles:read','roles','read','Leer roles'), ('permissions:read','permissions','read','Leer permisos'), ('audit:read','audit','read','Leer auditoría') on conflict (key) do nothing;
