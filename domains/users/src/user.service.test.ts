@@ -1,0 +1,6 @@
+import { InMemoryEventPublisher } from '@jburger/domain-events';
+import { describe, expect, it } from 'vitest';
+import { UserService } from './user.service.js';
+import type { UserRepository } from './contracts.js';
+const repository: UserRepository = { async list() { return []; }, async findById() { return undefined; }, async create(command) { return { id: 'user_1', tenantId: command.tenantId, email: command.email, nombre: command.nombre, activo: true, roleIds: command.roleIds ?? [], audit: { createdAt: new Date().toISOString(), createdBy: command.actorId } }; }, async update(command) { return { id: command.id, tenantId: command.tenantId, email: command.email ?? 'a@test.com', nombre: command.nombre ?? 'A', activo: true, roleIds: [], audit: { createdAt: new Date().toISOString(), updatedBy: command.actorId } }; }, async disable() {}, async assignTenant() {}, async assignBranch() {}, async assignRole() {} };
+describe('UserService', () => { it('audits user creation', async () => { const events = new InMemoryEventPublisher(); await new UserService(repository, events).create({ tenantId: 'tenant_1', email: 'a@test.com', nombre: 'Ana', actorId: 'actor_1' }); expect(events.events[0]?.metadata.eventName).toBe('USER_CREATED'); }); });

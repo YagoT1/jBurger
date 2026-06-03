@@ -1,0 +1,12 @@
+export const defaultRoleKeys = ['OWNER', 'ADMIN', 'MANAGER', 'CAJERO', 'COCINA', 'DELIVERY', 'SOPORTE', 'CLIENTE'] as const;
+export type DefaultRoleKey = (typeof defaultRoleKeys)[number];
+export const defaultRolePermissionMap: Record<DefaultRoleKey, string[]> = {
+  OWNER: ['users.read', 'users.write', 'roles.read', 'roles.write', 'permissions.read', 'permissions.write', 'audit.read', 'audit.export', 'tenants.assign', 'branches.assign'],
+  ADMIN: ['users.read', 'users.write', 'roles.read', 'roles.write', 'permissions.read', 'audit.read', 'branches.assign'],
+  MANAGER: ['users.read', 'products.read', 'products.write', 'orders.read', 'orders.write', 'branches.assign'],
+  CAJERO: ['orders.read', 'orders.write', 'payments.read'],
+  COCINA: ['orders.read', 'orders.write'],
+  DELIVERY: ['orders.read'],
+  SOPORTE: ['support.access', 'users.read', 'orders.read'],
+  CLIENTE: ['products.read', 'orders.read']
+};

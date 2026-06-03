@@ -1,0 +1,22 @@
+{
+  "name": "@jburger/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start -p 3000",
+    "lint": "next lint || eslint . --ext .ts,.tsx",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "@jburger/config": "workspace:*",
+    "@jburger/ui": "workspace:*",
+    "next": "^16.0.7",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "zod": "^4.1.13"
+  }
+}

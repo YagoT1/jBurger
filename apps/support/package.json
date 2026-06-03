@@ -1,0 +1,13 @@
+{
+  "name": "@jburger/support",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "echo 'Application shell reserved for future wave'",
+    "build": "echo 'No build configured yet'",
+    "lint": "echo 'No lint configured yet'",
+    "typecheck": "echo 'No typecheck configured yet'",
+    "test": "echo 'No tests configured yet'"
+  }
+}

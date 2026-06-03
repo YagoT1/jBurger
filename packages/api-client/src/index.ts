@@ -1,0 +1,2 @@
+export interface ApiClientOptions { baseUrl: string; getToken?: () => Promise<string | undefined> | string | undefined; }
+export const createApiClient = (options: ApiClientOptions) => ({ async health(): Promise<{ status: string }> { const response = await fetch(`${options.baseUrl}/health`); if (!response.ok) throw new Error(`Health request failed: ${response.status}`); return response.json() as Promise<{ status: string }>; } });

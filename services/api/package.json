@@ -1,0 +1,40 @@
+{
+  "name": "@jburger/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nest start --watch",
+    "build": "nest build",
+    "start": "node dist/main.js",
+    "lint": "eslint src --ext .ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@jburger/config": "workspace:*",
+    "@jburger/telemetry": "workspace:*",
+    "@nestjs/common": "^11.1.9",
+    "@nestjs/config": "^4.0.2",
+    "@nestjs/core": "^11.1.9",
+    "@nestjs/platform-express": "^11.1.9",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.3",
+    "helmet": "^8.1.0",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2",
+    "zod": "^4.1.13",
+    "@jburger/authorization": "workspace:*",
+    "@jburger/domain-auth": "workspace:*",
+    "@jburger/domain-events": "workspace:*",
+    "@jburger/domain-permissions": "workspace:*",
+    "@jburger/domain-roles": "workspace:*",
+    "@jburger/domain-users": "workspace:*",
+    "@nestjs/swagger": "^11.2.3"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^11.0.14",
+    "@nestjs/testing": "^11.1.9",
+    "@types/express": "^5.0.5"
+  }
+}
