@@ -1,0 +1,3 @@
+import { describe, expect, it } from 'vitest';
+import { PolicyEngine } from './index.js';
+describe('tenant and branch isolation', () => { it('blocks cross-tenant requests', () => { const result = new PolicyEngine().evaluate({ isAuthenticated: true, tenantId: 'tenant_a', branchId: 'branch_a', roleKeys: [], permissions: ['users.read'] }, { tenantId: 'tenant_b', permission: 'users.read' }); expect(result.reason).toBe('TENANT_MISMATCH'); }); it('blocks cross-branch requests', () => { const result = new PolicyEngine().evaluate({ isAuthenticated: true, tenantId: 'tenant_a', branchId: 'branch_a', roleKeys: [], permissions: ['users.read'] }, { branchId: 'branch_b', permission: 'users.read' }); expect(result.reason).toBe('BRANCH_MISMATCH'); }); });

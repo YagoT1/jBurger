@@ -1,1 +1,2 @@
-export const domainName = 'users';
+export * from './contracts.js';
+export * from './user.service.js';
