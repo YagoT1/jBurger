@@ -6,6 +6,8 @@
 
 > **Design system specification:** Visual language, tokens, components, Figma libraries, and frontend design-system integration must follow `docs/architecture/design-system-visual-language-specification.md`.
 
+> **Frontend implementation blueprint:** Application structure, App Router routing, feature/domain/component boundaries, state, data access, auth, testing, security, observability, governance, and roadmap must follow `docs/architecture/frontend-implementation-blueprint.md`.
+
 ## 0. Experience Architecture Scope
 
 This document defines the production frontend, UX, design system, realtime UI, dashboard, mobile, accessibility, performance, observability, and governance architecture for J Burguer.
