@@ -1,0 +1,105 @@
+# =========================
+# Dependencies
+# =========================
+node_modules/
+.pnpm-store/
+.npm/
+.yarn/
+
+# =========================
+# Build outputs
+# =========================
+dist/
+build/
+out/
+.next/
+.turbo/
+storybook-static/
+
+# =========================
+# Coverage & testing
+# =========================
+coverage/
+.nyc_output/
+playwright-report/
+test-results/
+blob-report/
+
+# =========================
+# Logs
+# =========================
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =========================
+# Environment variables
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# Cache
+# =========================
+.cache/
+.parcel-cache/
+.eslintcache
+.vite/
+vitest.workspace.ts.timestamp-*
+
+# =========================
+# TypeScript
+# =========================
+*.tsbuildinfo
+
+# =========================
+# IDEs
+# =========================
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =========================
+# Temporary files
+# =========================
+tmp/
+temp/
+*.tmp
+
+# =========================
+# Generated reports
+# =========================
+reports/
+artifacts/
+
+# =========================
+# Firebase
+# =========================
+.firebase/
+firebase-debug.log
+
+# =========================
+# Sentry
+# =========================
+.sentryclirc
+
+# =========================
+# Local tooling
+# =========================
+.codex/
+.cursor/
+.claude/

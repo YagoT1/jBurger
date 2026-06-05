@@ -1,2 +1,25 @@
-import { Button, Card, CardHeader, CardTitle, Input, PageShell, Stack } from '@jburger/ui';
-export default function LoginPage() { return <PageShell className="grid place-items-center"><Card className="w-full max-w-md"><CardHeader><CardTitle>Iniciar sesión</CardTitle></CardHeader><form className="space-y-4" aria-label="Formulario de inicio de sesión"><label className="block text-sm font-medium">Correo<Input type="email" autoComplete="email" required /></label><label className="block text-sm font-medium">Contraseña<Input type="password" autoComplete="current-password" required /></label><Button type="submit" className="w-full">Entrar</Button></form></Card></PageShell>; }
+import { Button, Card, CardHeader, CardTitle, Input, PageShell } from '@jburger/ui';
+export default function LoginPage() {
+  return (
+    <PageShell className="grid place-items-center">
+      <Card className="w-full max-w-md">
+        <CardHeader>
+          <CardTitle>Iniciar sesión</CardTitle>
+        </CardHeader>
+        <form className="space-y-4" aria-label="Formulario de inicio de sesión">
+          <label className="block text-sm font-medium">
+            Correo
+            <Input type="email" autoComplete="email" required />
+          </label>
+          <label className="block text-sm font-medium">
+            Contraseña
+            <Input type="password" autoComplete="current-password" required />
+          </label>
+          <Button type="submit" className="w-full">
+            Entrar
+          </Button>
+        </form>
+      </Card>
+    </PageShell>
+  );
+}
