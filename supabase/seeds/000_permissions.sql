@@ -1,1 +1,25 @@
-insert into public.permissions (key, resource, action, descripcion) values ('users:read','users','read','Leer usuarios'), ('roles:read','roles','read','Leer roles'), ('permissions:read','permissions','read','Leer permisos'), ('audit:read','audit','read','Leer auditoría') on conflict (key) do nothing;
+insert into public.permissions (key, resource, action, descripcion) values
+  ('users.read', 'users', 'read', 'Leer usuarios'),
+  ('users.write', 'users', 'write', 'Modificar usuarios'),
+  ('products.read', 'products', 'read', 'Leer productos'),
+  ('products.write', 'products', 'write', 'Modificar productos'),
+  ('orders.read', 'orders', 'read', 'Leer pedidos'),
+  ('orders.write', 'orders', 'write', 'Modificar pedidos'),
+  ('payments.read', 'payments', 'read', 'Leer pagos'),
+  ('payments.refund', 'payments', 'refund', 'Reembolsar pagos'),
+  ('audit.read', 'audit', 'read', 'Leer auditoría'),
+  ('audit.export', 'audit', 'export', 'Exportar auditoría'),
+  ('support.access', 'support', 'access', 'Acceder a soporte'),
+  ('support.break_glass', 'support', 'break_glass', 'Acceso break-glass de soporte'),
+  ('roles.read', 'roles', 'read', 'Leer roles'),
+  ('roles.write', 'roles', 'write', 'Modificar roles'),
+  ('permissions.read', 'permissions', 'read', 'Leer permisos'),
+  ('permissions.write', 'permissions', 'write', 'Modificar permisos'),
+  ('sessions.read', 'sessions', 'read', 'Leer sesiones'),
+  ('sessions.revoke', 'sessions', 'revoke', 'Revocar sesiones'),
+  ('tenants.assign', 'tenants', 'assign', 'Asignar tenants'),
+  ('branches.assign', 'branches', 'assign', 'Asignar sucursales')
+on conflict (key) do update set
+  resource = excluded.resource,
+  action = excluded.action,
+  descripcion = excluded.descripcion;
