@@ -30,7 +30,15 @@
     "@jburger/domain-permissions": "workspace:*",
     "@jburger/domain-roles": "workspace:*",
     "@jburger/domain-users": "workspace:*",
-    "@nestjs/swagger": "^11.2.3"
+    "@nestjs/swagger": "^11.2.3",
+    "@jburger/domain-products": "workspace:*",
+    "@jburger/domain-categories": "workspace:*",
+    "@jburger/domain-menus": "workspace:*",
+    "@jburger/domain-modifiers": "workspace:*",
+    "@jburger/domain-combos": "workspace:*",
+    "@jburger/domain-availability": "workspace:*",
+    "@jburger/domain-pricing": "workspace:*",
+    "@jburger/domain-branches": "workspace:*"
   },
   "devDependencies": {
     "@nestjs/cli": "^11.0.14",
