@@ -9,6 +9,7 @@ import { tenantMiddleware } from './common/middleware/tenant.middleware.js';
 import { validateEnvironment } from './config/environment.js';
 import { CommerceModule } from './commerce.module.js';
 import { HealthModule } from './health/health.module.js';
+import { OrderingModule } from './ordering.module.js';
 import { PermissionsModule } from './permissions/permissions.module.js';
 import { RolesModule } from './roles/roles.module.js';
 import { UsersModule } from './users/users.module.js';
@@ -23,6 +24,7 @@ import { UsersModule } from './users/users.module.js';
     BranchesModule,
     AuditModule,
     CommerceModule,
+    OrderingModule,
   ],
 })
 export class AppModule implements NestModule {

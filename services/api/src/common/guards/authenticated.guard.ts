@@ -46,6 +46,10 @@ export class AuthenticatedGuard implements CanActivate {
         'availability.write',
         'pricing.read',
         'pricing.write',
+        'cart.read',
+        'cart.write',
+        'orders.read',
+        'orders.write',
       ],
     };
 

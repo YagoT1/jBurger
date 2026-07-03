@@ -38,7 +38,12 @@
     "@jburger/domain-combos": "workspace:*",
     "@jburger/domain-availability": "workspace:*",
     "@jburger/domain-pricing": "workspace:*",
-    "@jburger/domain-branches": "workspace:*"
+    "@jburger/domain-branches": "workspace:*",
+    "@jburger/domain-cart": "workspace:*",
+    "@jburger/domain-order-drafts": "workspace:*",
+    "@jburger/domain-orders": "workspace:*",
+    "@jburger/domain-pricing-engine": "workspace:*",
+    "@jburger/domain-delivery-validation": "workspace:*"
   },
   "devDependencies": {
     "@nestjs/cli": "^11.0.14",
