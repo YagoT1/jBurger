@@ -34,7 +34,9 @@ export interface SecurityEvent<TPayload extends Record<string, unknown> = Record
   payload: TPayload;
 }
 
-export interface IntegrationEvent<TPayload extends Record<string, unknown> = Record<string, unknown>> {
+export interface IntegrationEvent<
+  TPayload extends Record<string, unknown> = Record<string, unknown>,
+> {
   metadata: EventMetadata & { category: 'integration' };
   destination?: string;
   payload: TPayload;
@@ -67,7 +69,20 @@ export const auditActions = [
   'LOGIN_FAILED',
   'SESSION_REVOKED',
   'TENANT_ASSIGNED',
-  'BRANCH_ASSIGNED'
+  'BRANCH_ASSIGNED',
+  'CATEGORY_CREATED',
+  'CATEGORY_UPDATED',
+  'CATEGORY_DISABLED',
+  'PRODUCT_CREATED',
+  'PRODUCT_UPDATED',
+  'PRODUCT_DISABLED',
+  'AVAILABILITY_UPDATED',
+  'CART_CREATED',
+  'CART_ITEM_ADDED',
+  'CART_ITEM_UPDATED',
+  'CART_ITEM_REMOVED',
+  'CART_CLEARED',
+  'CART_MERGED',
 ] as const;
 
 export type AuditAction = (typeof auditActions)[number];
@@ -86,7 +101,9 @@ export const createEventMetadata = <TCategory extends EventCategory>(
 
 export class InMemoryEventPublisher implements EventPublisher {
   readonly events: EventEnvelope[] = [];
-  async publish<TPayload extends Record<string, unknown>>(event: EventEnvelope<TPayload>): Promise<void> {
+  async publish<TPayload extends Record<string, unknown>>(
+    event: EventEnvelope<TPayload>,
+  ): Promise<void> {
     this.events.push(event);
   }
 }
