@@ -3,13 +3,12 @@ import { ConfigModule } from '@nestjs/config';
 import { AuditModule } from './audit/audit.module.js';
 import { AuthModule } from './auth/auth.module.js';
 import { BranchesModule } from './branches/branches.module.js';
+import { CatalogModule } from './catalog/catalog.module.js';
 import { branchMiddleware } from './common/middleware/branch.middleware.js';
 import { securityContextMiddleware } from './common/middleware/security.middleware.js';
 import { tenantMiddleware } from './common/middleware/tenant.middleware.js';
 import { validateEnvironment } from './config/environment.js';
-import { CommerceModule } from './commerce.module.js';
 import { HealthModule } from './health/health.module.js';
-import { OrderingModule } from './ordering.module.js';
 import { PermissionsModule } from './permissions/permissions.module.js';
 import { RolesModule } from './roles/roles.module.js';
 import { UsersModule } from './users/users.module.js';
@@ -22,9 +21,8 @@ import { UsersModule } from './users/users.module.js';
     RolesModule,
     PermissionsModule,
     BranchesModule,
+    CatalogModule,
     AuditModule,
-    CommerceModule,
-    OrderingModule,
   ],
 })
 export class AppModule implements NestModule {
