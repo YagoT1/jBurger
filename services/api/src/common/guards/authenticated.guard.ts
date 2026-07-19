@@ -1,56 +1,41 @@
 import { CanActivate, ExecutionContext, Injectable, UnauthorizedException } from '@nestjs/common';
+import { AuthService } from '@jburger/domain-auth';
+import type { AuthenticatedPrincipal } from '@jburger/domain-auth';
 import type { SecuredRequest } from '../../security/security.types.js';
 
 @Injectable()
 export class AuthenticatedGuard implements CanActivate {
-  canActivate(context: ExecutionContext): boolean {
+  constructor(private readonly authService: AuthService) {}
+
+  async canActivate(context: ExecutionContext): Promise<boolean> {
     const request = context.switchToHttp().getRequest<SecuredRequest>();
 
     const authorization = request.headers.authorization;
-    const token = Array.isArray(authorization) ? authorization[0] : authorization;
+    const header = Array.isArray(authorization) ? authorization[0] : authorization;
 
-    if (!token?.startsWith('Bearer ')) {
+    if (!header?.startsWith('Bearer ')) {
       throw new UnauthorizedException('Bearer token is required.');
     }
 
-    request.context = request.context ?? {
-      requestId: crypto.randomUUID(),
-    };
+    let principal: AuthenticatedPrincipal;
+    try {
+      principal = await this.authService.validateAccessToken(
+        header.slice('Bearer '.length),
+        request.context?.tenantId,
+        request.context?.branchId,
+      );
+    } catch {
+      throw new UnauthorizedException('Invalid or expired access token.');
+    }
 
+    request.context = request.context ?? { requestId: crypto.randomUUID() };
     request.context.auth = {
       isAuthenticated: true,
-      actorId: 'current-user',
-      ...(request.context.tenantId ? { tenantId: request.context.tenantId } : {}),
-      ...(request.context.branchId ? { branchId: request.context.branchId } : {}),
-      roleKeys: ['ADMIN'],
-      permissions: [
-        'users.read',
-        'users.write',
-        'roles.read',
-        'roles.write',
-        'permissions.read',
-        'sessions.read',
-        'sessions.revoke',
-        'audit.read',
-        'products.read',
-        'products.write',
-        'categories.read',
-        'categories.write',
-        'menus.read',
-        'menus.write',
-        'modifiers.read',
-        'modifiers.write',
-        'combos.read',
-        'combos.write',
-        'availability.read',
-        'availability.write',
-        'pricing.read',
-        'pricing.write',
-        'cart.read',
-        'cart.write',
-        'orders.read',
-        'orders.write',
-      ],
+      actorId: principal.id,
+      ...(principal.tenantId ? { tenantId: principal.tenantId } : {}),
+      ...(principal.branchId ? { branchId: principal.branchId } : {}),
+      roleKeys: principal.roleKeys,
+      permissions: principal.permissions,
     };
 
     return true;

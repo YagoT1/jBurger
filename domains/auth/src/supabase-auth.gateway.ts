@@ -5,6 +5,54 @@ interface SupabaseAuthGatewayOptions {
   anonKey: string;
 }
 
+/**
+ * Error del gateway de autenticación. Conserva el detalle original de GoTrue
+ * (status HTTP, código y descripción) para diagnóstico interno.
+ * Nunca debe exponerse al cliente ni contener credenciales.
+ */
+export class AuthGatewayError extends Error {
+  constructor(
+    message: string,
+    readonly status: number,
+    readonly errorCode?: string,
+    readonly errorDescription?: string,
+  ) {
+    super(message);
+    this.name = 'AuthGatewayError';
+  }
+}
+
+const parseGatewayError = async (
+  response: Response,
+): Promise<{ code?: string; description?: string }> => {
+  try {
+    const body = (await response.json()) as Record<string, unknown>;
+    const code =
+      typeof body['error_code'] === 'string'
+        ? body['error_code']
+        : typeof body['error'] === 'string'
+          ? body['error']
+          : undefined;
+    const description =
+      typeof body['error_description'] === 'string'
+        ? body['error_description']
+        : typeof body['msg'] === 'string'
+          ? body['msg']
+          : undefined;
+    return {
+      ...(code !== undefined ? { code } : {}),
+      ...(description !== undefined ? { description } : {}),
+    };
+  } catch {
+    return {};
+  }
+};
+
+const throwGatewayError = async (message: string, response: Response): Promise<never> => {
+  const { code, description } = await parseGatewayError(response);
+  throw new AuthGatewayError(message, response.status, code, description);
+};
+
 export class FetchSupabaseAuthGateway implements SupabaseAuthGateway {
   constructor(private readonly options: SupabaseAuthGatewayOptions) {}
 
@@ -24,7 +72,7 @@ export class FetchSupabaseAuthGateway implements SupabaseAuthGateway {
     });
 
     if (!response.ok) {
-      throw new Error('Invalid credentials.');
+      await throwGatewayError('Invalid credentials.', response);
     }
 
     const body = (await response.json()) as {
@@ -57,7 +105,7 @@ export class FetchSupabaseAuthGateway implements SupabaseAuthGateway {
     });
 
     if (!response.ok) {
-      throw new Error('Invalid access token.');
+      await throwGatewayError('Invalid access token.', response);
     }
 
     const user = (await response.json()) as {
@@ -84,7 +132,7 @@ export class FetchSupabaseAuthGateway implements SupabaseAuthGateway {
     });
 
     if (!response.ok) {
-      throw new Error('Invalid refresh token.');
+      await throwGatewayError('Invalid refresh token.', response);
     }
 
     const body = (await response.json()) as {
