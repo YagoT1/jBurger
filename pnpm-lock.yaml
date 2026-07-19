@@ -135,9 +135,26 @@ importers:
 
   domains/branches: {}
 
-  domains/cart: {}
+  domains/cart:
+    dependencies:
+      '@jburger/domain-events':
+        specifier: workspace:*
+        version: link:../../packages/domain-events
+      '@jburger/domain-types':
+        specifier: workspace:*
+        version: link:../../packages/domain-types
+      '@jburger/shared-kernel':
+        specifier: workspace:*
+        version: link:../../packages/shared-kernel
 
-  domains/categories: {}
+  domains/categories:
+    dependencies:
+      '@jburger/domain-events':
+        specifier: workspace:*
+        version: link:../../packages/domain-events
+      '@jburger/domain-types':
+        specifier: workspace:*
+        version: link:../../packages/domain-types
 
   domains/delivery: {}
 
@@ -165,7 +182,17 @@ importers:
         specifier: workspace:*
         version: link:../../packages/shared-kernel
 
-  domains/products: {}
+  domains/products:
+    dependencies:
+      '@jburger/domain-events':
+        specifier: workspace:*
+        version: link:../../packages/domain-events
+      '@jburger/domain-types':
+        specifier: workspace:*
+        version: link:../../packages/domain-types
+      '@jburger/shared-kernel':
+        specifier: workspace:*
+        version: link:../../packages/shared-kernel
 
   domains/reconocimientos: {}
 
@@ -261,15 +288,24 @@ importers:
       '@jburger/domain-auth':
         specifier: workspace:*
         version: link:../../domains/auth
+      '@jburger/domain-categories':
+        specifier: workspace:*
+        version: link:../../domains/categories
       '@jburger/domain-events':
         specifier: workspace:*
         version: link:../../packages/domain-events
       '@jburger/domain-permissions':
         specifier: workspace:*
         version: link:../../domains/permissions
+      '@jburger/domain-products':
+        specifier: workspace:*
+        version: link:../../domains/products
       '@jburger/domain-roles':
         specifier: workspace:*
         version: link:../../domains/roles
+      '@jburger/domain-types':
+        specifier: workspace:*
+        version: link:../../packages/domain-types
       '@jburger/domain-users':
         specifier: workspace:*
         version: link:../../domains/users
