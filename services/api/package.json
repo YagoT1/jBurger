@@ -26,6 +26,7 @@
     "zod": "^4.1.13",
     "@jburger/authorization": "workspace:*",
     "@jburger/domain-auth": "workspace:*",
+    "@jburger/domain-cart": "workspace:*",
     "@jburger/domain-categories": "workspace:*",
     "@jburger/domain-events": "workspace:*",
     "@jburger/domain-permissions": "workspace:*",

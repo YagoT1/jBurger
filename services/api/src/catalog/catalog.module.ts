@@ -93,5 +93,6 @@ const createCatalogPersistence = (config: ConfigService): CatalogPersistence => 
       inject: [CATALOG_PERSISTENCE],
     },
   ],
+  exports: [CATALOG_PERSISTENCE],
 })
 export class CatalogModule {}

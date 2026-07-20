@@ -57,6 +57,18 @@ export class SupabaseRestClient {
     }
     return (await response.json()) as TRow[];
   }
+  /** Invoca una función Postgres vía PostgREST RPC. Devuelve el resultado escalar/JSON de la función. */
+  async rpc<TResult>(functionName: string, args: Record<string, unknown>): Promise<TResult> {
+    const response = await fetch(`${this.options.url}/rest/v1/rpc/${functionName}`, {
+      method: 'POST',
+      headers: this.headers(),
+      body: JSON.stringify(args),
+    });
+    if (!response.ok) {
+      throw new ServiceUnavailableException('Data storage is unavailable.');
+    }
+    return (await response.json()) as TResult;
+  }
 }
 
 export const eq = (value: string): string => `eq.${encodeURIComponent(value)}`;
