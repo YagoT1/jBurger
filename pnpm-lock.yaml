@@ -133,7 +133,20 @@ importers:
         specifier: workspace:*
         version: link:../../packages/shared-kernel
 
-  domains/branches: {}
+  domains/availability:
+    dependencies:
+      '@jburger/domain-products':
+        specifier: workspace:*
+        version: link:../products
+      '@jburger/shared-kernel':
+        specifier: workspace:*
+        version: link:../../packages/shared-kernel
+
+  domains/branches:
+    dependencies:
+      '@jburger/shared-kernel':
+        specifier: workspace:*
+        version: link:../../packages/shared-kernel
 
   domains/cart:
     dependencies:
@@ -156,7 +169,25 @@ importers:
         specifier: workspace:*
         version: link:../../packages/domain-types
 
+  domains/combos:
+    dependencies:
+      '@jburger/domain-products':
+        specifier: workspace:*
+        version: link:../products
+      '@jburger/shared-kernel':
+        specifier: workspace:*
+        version: link:../../packages/shared-kernel
+
   domains/delivery: {}
+
+  domains/delivery-validation:
+    dependencies:
+      '@jburger/domain-events':
+        specifier: workspace:*
+        version: link:../../packages/domain-events
+      '@jburger/shared-kernel':
+        specifier: workspace:*
+        version: link:../../packages/shared-kernel
 
   domains/experiencia_cliente: {}
 
@@ -164,9 +195,43 @@ importers:
 
   domains/kitchen: {}
 
+  domains/menus:
+    dependencies:
+      '@jburger/domain-products':
+        specifier: workspace:*
+        version: link:../products
+      '@jburger/shared-kernel':
+        specifier: workspace:*
+        version: link:../../packages/shared-kernel
+
+  domains/modifiers:
+    dependencies:
+      '@jburger/domain-products':
+        specifier: workspace:*
+        version: link:../products
+      '@jburger/shared-kernel':
+        specifier: workspace:*
+        version: link:../../packages/shared-kernel
+
   domains/notifications: {}
 
-  domains/orders: {}
+  domains/order-drafts:
+    dependencies:
+      '@jburger/domain-events':
+        specifier: workspace:*
+        version: link:../../packages/domain-events
+      '@jburger/shared-kernel':
+        specifier: workspace:*
+        version: link:../../packages/shared-kernel
+
+  domains/orders:
+    dependencies:
+      '@jburger/domain-events':
+        specifier: workspace:*
+        version: link:../../packages/domain-events
+      '@jburger/shared-kernel':
+        specifier: workspace:*
+        version: link:../../packages/shared-kernel
 
   domains/payments: {}
 
@@ -178,6 +243,24 @@ importers:
       '@jburger/domain-types':
         specifier: workspace:*
         version: link:../../packages/domain-types
+      '@jburger/shared-kernel':
+        specifier: workspace:*
+        version: link:../../packages/shared-kernel
+
+  domains/pricing:
+    dependencies:
+      '@jburger/domain-products':
+        specifier: workspace:*
+        version: link:../products
+      '@jburger/shared-kernel':
+        specifier: workspace:*
+        version: link:../../packages/shared-kernel
+
+  domains/pricing-engine:
+    dependencies:
+      '@jburger/domain-events':
+        specifier: workspace:*
+        version: link:../../packages/domain-events
       '@jburger/shared-kernel':
         specifier: workspace:*
         version: link:../../packages/shared-kernel
@@ -288,15 +371,48 @@ importers:
       '@jburger/domain-auth':
         specifier: workspace:*
         version: link:../../domains/auth
+      '@jburger/domain-availability':
+        specifier: workspace:*
+        version: link:../../domains/availability
+      '@jburger/domain-branches':
+        specifier: workspace:*
+        version: link:../../domains/branches
+      '@jburger/domain-cart':
+        specifier: workspace:*
+        version: link:../../domains/cart
       '@jburger/domain-categories':
         specifier: workspace:*
         version: link:../../domains/categories
+      '@jburger/domain-combos':
+        specifier: workspace:*
+        version: link:../../domains/combos
+      '@jburger/domain-delivery-validation':
+        specifier: workspace:*
+        version: link:../../domains/delivery-validation
       '@jburger/domain-events':
         specifier: workspace:*
         version: link:../../packages/domain-events
+      '@jburger/domain-menus':
+        specifier: workspace:*
+        version: link:../../domains/menus
+      '@jburger/domain-modifiers':
+        specifier: workspace:*
+        version: link:../../domains/modifiers
+      '@jburger/domain-order-drafts':
+        specifier: workspace:*
+        version: link:../../domains/order-drafts
+      '@jburger/domain-orders':
+        specifier: workspace:*
+        version: link:../../domains/orders
       '@jburger/domain-permissions':
         specifier: workspace:*
         version: link:../../domains/permissions
+      '@jburger/domain-pricing':
+        specifier: workspace:*
+        version: link:../../domains/pricing
+      '@jburger/domain-pricing-engine':
+        specifier: workspace:*
+        version: link:../../domains/pricing-engine
       '@jburger/domain-products':
         specifier: workspace:*
         version: link:../../domains/products
