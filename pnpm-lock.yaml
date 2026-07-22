@@ -229,6 +229,9 @@ importers:
       '@jburger/domain-events':
         specifier: workspace:*
         version: link:../../packages/domain-events
+      '@jburger/domain-types':
+        specifier: workspace:*
+        version: link:../../packages/domain-types
       '@jburger/shared-kernel':
         specifier: workspace:*
         version: link:../../packages/shared-kernel
@@ -371,48 +374,21 @@ importers:
       '@jburger/domain-auth':
         specifier: workspace:*
         version: link:../../domains/auth
-      '@jburger/domain-availability':
-        specifier: workspace:*
-        version: link:../../domains/availability
-      '@jburger/domain-branches':
-        specifier: workspace:*
-        version: link:../../domains/branches
       '@jburger/domain-cart':
         specifier: workspace:*
         version: link:../../domains/cart
       '@jburger/domain-categories':
         specifier: workspace:*
         version: link:../../domains/categories
-      '@jburger/domain-combos':
-        specifier: workspace:*
-        version: link:../../domains/combos
-      '@jburger/domain-delivery-validation':
-        specifier: workspace:*
-        version: link:../../domains/delivery-validation
       '@jburger/domain-events':
         specifier: workspace:*
         version: link:../../packages/domain-events
-      '@jburger/domain-menus':
-        specifier: workspace:*
-        version: link:../../domains/menus
-      '@jburger/domain-modifiers':
-        specifier: workspace:*
-        version: link:../../domains/modifiers
-      '@jburger/domain-order-drafts':
-        specifier: workspace:*
-        version: link:../../domains/order-drafts
       '@jburger/domain-orders':
         specifier: workspace:*
         version: link:../../domains/orders
       '@jburger/domain-permissions':
         specifier: workspace:*
         version: link:../../domains/permissions
-      '@jburger/domain-pricing':
-        specifier: workspace:*
-        version: link:../../domains/pricing
-      '@jburger/domain-pricing-engine':
-        specifier: workspace:*
-        version: link:../../domains/pricing-engine
       '@jburger/domain-products':
         specifier: workspace:*
         version: link:../../domains/products
@@ -422,9 +398,9 @@ importers:
       '@jburger/domain-types':
         specifier: workspace:*
         version: link:../../packages/domain-types
-      '@jburger/domain-users':
+      '@jburger/shared-kernel':
         specifier: workspace:*
-        version: link:../../domains/users
+        version: link:../../packages/shared-kernel
       '@jburger/telemetry':
         specifier: workspace:*
         version: link:../../packages/telemetry
