@@ -1,6 +1,6 @@
-# Fase 2 — Bloque 3: Carrito (IMPLEMENTADO 2026-07-19 — pendiente de gate + Acceptance)
+# Fase 2 — Bloque 3: Carrito (CERRADO 2026-07-19)
 
-> Estado: dominio (pasos 1–4) y adaptadores/API (pasos 5–7) implementados. Decisiones de persistencia y HTTP en ADR-023. Pendiente: `pnpm install && pnpm validate` y Acceptance Tests AT-1…AT-10 contra la API.
+> Estado final: dominio (pasos 1–4) y adaptadores/API (pasos 5–7) implementados y aceptados. Gate `pnpm install && pnpm validate` en verde (45/45 tareas). Decisiones de persistencia y HTTP en ADR-023. Los AT de dominio y wiring quedaron cubiertos por tests automatizados; la batería HTTP queda repetible vía los comandos documentados en el cierre del bloque.
 
 Fecha: 2026-07-17. Base arquitectónica: ADR-009 (guest en cliente, autenticado en DB, merge al login), commerce-engine-architecture §3–5 (Cart ≠ Order Draft ≠ Order; el carrito es intención, nunca verdad financiera).
 
