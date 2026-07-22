@@ -83,6 +83,10 @@ export const auditActions = [
   'CART_ITEM_REMOVED',
   'CART_CLEARED',
   'CART_MERGED',
+  'ORDER_PLACED',
+  'ORDER_CONFIRMED',
+  'ORDER_STATUS_CHANGED',
+  'ORDER_CANCELLED',
 ] as const;
 
 export type AuditAction = (typeof auditActions)[number];

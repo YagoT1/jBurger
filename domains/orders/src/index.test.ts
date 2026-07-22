@@ -1,45 +1,20 @@
 import { describe, expect, it } from 'vitest';
-import { OrderService } from './index.js';
-describe('OrderService', () => {
-  it('creates immutable snapshots and confirms orders', async () => {
-    const usd = { amount: 100, currency: 'USD' as const };
-    const service = new OrderService();
-    const order = await service.createOrder(
-      {
-        tenantId: 'tenant',
-        branchId: 'branch',
-        customer: { name: 'Ada' },
-        delivery: { mode: 'pickup', deliveryFee: { amount: 0, currency: 'USD' } },
-        items: [
-          {
-            id: 'item',
-            productId: 'product',
-            quantity: 1,
-            lineTotal: usd,
-            snapshot: {
-              productName: 'Burger',
-              price: usd,
-              modifierSelection: [],
-              appliedTaxes: [],
-              appliedDiscounts: [],
-              images: [],
-              branchName: 'Centro',
-            },
-          },
-        ],
-        totals: {
-          subtotal: usd,
-          taxes: { amount: 0, currency: 'USD' },
-          discounts: { amount: 0, currency: 'USD' },
-          deliveryFee: { amount: 0, currency: 'USD' },
-          total: usd,
-        },
-      },
-      { tenantId: 'tenant', branchId: 'branch' },
-    );
-    expect(order.immutableSnapshot).toBeDefined();
-    expect(
-      (await service.confirmOrder(order.id, { tenantId: 'tenant', branchId: 'branch' })).status,
-    ).toBe('confirmed');
+import {
+  canTransition,
+  CheckoutService,
+  OrderDomainError,
+  OrderService,
+  ORDER_TRANSITIONS,
+} from './index.js';
+
+// Smoke test de la superficie pública del dominio de pedidos.
+// El comportamiento detallado vive en checkout.service.test.ts y order.service.test.ts.
+describe('domain-orders public API', () => {
+  it('exposes services, errors and the transition machine', () => {
+    expect(typeof CheckoutService).toBe('function');
+    expect(typeof OrderService).toBe('function');
+    expect(new OrderDomainError('ORDER_NOT_FOUND', 'x').code).toBe('ORDER_NOT_FOUND');
+    expect(canTransition('borrador', 'confirmado')).toBe(true);
+    expect(ORDER_TRANSITIONS.entregado).toEqual([]);
   });
 });

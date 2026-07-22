@@ -86,12 +86,28 @@ export interface Categoria {
   activa: boolean;
   audit: AuditMetadata;
 }
+export type EstadoPedido = 'borrador' | 'confirmado' | 'preparacion' | 'entregado' | 'cancelado';
+export interface PedidoItem {
+  id: EntityId;
+  productId: EntityId;
+  nombre: string;
+  quantity: number;
+  precioUnitario: Money;
+  subtotal: Money;
+  notas?: string;
+}
 export interface Pedido {
   id: EntityId;
   tenantId: EntityId;
   sucursalId: EntityId;
   clienteId?: EntityId;
-  estado: 'borrador' | 'confirmado' | 'preparacion' | 'entregado' | 'cancelado';
+  numero?: number;
+  estado: EstadoPedido;
+  fulfillmentType?: FulfillmentType;
+  direccionEntrega?: Address;
+  notas?: string;
+  cartId?: EntityId;
+  items: PedidoItem[];
   total: Money;
   audit: AuditMetadata;
 }

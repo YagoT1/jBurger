@@ -5,6 +5,7 @@ import { AuthModule } from './auth/auth.module.js';
 import { BranchesModule } from './branches/branches.module.js';
 import { CartModule } from './cart/cart.module.js';
 import { CatalogModule } from './catalog/catalog.module.js';
+import { OrdersModule } from './orders/orders.module.js';
 import { branchMiddleware } from './common/middleware/branch.middleware.js';
 import { securityContextMiddleware } from './common/middleware/security.middleware.js';
 import { tenantMiddleware } from './common/middleware/tenant.middleware.js';
@@ -24,6 +25,7 @@ import { UsersModule } from './users/users.module.js';
     BranchesModule,
     CatalogModule,
     CartModule,
+    OrdersModule,
     AuditModule,
   ],
 })

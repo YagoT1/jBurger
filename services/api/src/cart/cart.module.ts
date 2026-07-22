@@ -66,5 +66,6 @@ const createCartRepository = (config: ConfigService): CartRepository => {
       inject: [CART_CATALOG_SOURCE],
     },
   ],
+  exports: [CartService, CartPricingService],
 })
 export class CartModule {}
