@@ -87,6 +87,11 @@ export const auditActions = [
   'ORDER_CONFIRMED',
   'ORDER_STATUS_CHANGED',
   'ORDER_CANCELLED',
+  'PAYMENT_INITIATED',
+  'PAYMENT_APPROVED',
+  'PAYMENT_REJECTED',
+  'PAYMENT_REFUNDED',
+  'PAYMENT_EXPIRED',
 ] as const;
 
 export type AuditAction = (typeof auditActions)[number];

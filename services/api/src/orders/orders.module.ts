@@ -58,5 +58,8 @@ const createOrderRepository = (config: ConfigService): OrderRepository => {
       inject: [ORDER_REPOSITORY, EVENT_PUBLISHER],
     },
   ],
+  // ORDER_REPOSITORY se exporta para que PaymentsModule reutilice la misma instancia de persistencia
+  // (crítico con InMemoryOrderRepository: dos instancias no compartirían pedidos).
+  exports: [ORDER_REPOSITORY, OrderService],
 })
 export class OrdersModule {}

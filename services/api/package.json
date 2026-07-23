@@ -19,6 +19,7 @@
     "@jburger/domain-categories": "workspace:*",
     "@jburger/domain-events": "workspace:*",
     "@jburger/domain-orders": "workspace:*",
+    "@jburger/domain-payments": "workspace:*",
     "@jburger/domain-permissions": "workspace:*",
     "@jburger/domain-products": "workspace:*",
     "@jburger/domain-roles": "workspace:*",

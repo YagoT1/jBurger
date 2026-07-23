@@ -111,6 +111,20 @@ export interface Pedido {
   total: Money;
   audit: AuditMetadata;
 }
+export type EstadoPago = 'pendiente' | 'aprobado' | 'rechazado' | 'reembolsado' | 'expirado';
+export type PaymentProvider = 'mercadopago' | 'mock';
+export interface Pago {
+  id: EntityId;
+  tenantId: EntityId;
+  orderId: EntityId;
+  estado: EstadoPago;
+  provider: PaymentProvider;
+  providerPaymentId?: string;
+  providerPreferenceId?: string;
+  checkoutUrl?: string;
+  monto: Money;
+  audit: AuditMetadata;
+}
 export interface Sucursal {
   id: EntityId;
   tenantId: EntityId;

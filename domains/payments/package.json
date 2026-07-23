@@ -12,5 +12,9 @@
   "exports": {
     ".": "./dist/index.js"
   },
-  "types": "./dist/index.d.ts"
+  "types": "./dist/index.d.ts",
+  "dependencies": {
+    "@jburger/domain-events": "workspace:*",
+    "@jburger/domain-types": "workspace:*"
+  }
 }

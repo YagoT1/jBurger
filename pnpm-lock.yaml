@@ -236,7 +236,14 @@ importers:
         specifier: workspace:*
         version: link:../../packages/shared-kernel
 
-  domains/payments: {}
+  domains/payments:
+    dependencies:
+      '@jburger/domain-events':
+        specifier: workspace:*
+        version: link:../../packages/domain-events
+      '@jburger/domain-types':
+        specifier: workspace:*
+        version: link:../../packages/domain-types
 
   domains/permissions:
     dependencies:
@@ -386,6 +393,9 @@ importers:
       '@jburger/domain-orders':
         specifier: workspace:*
         version: link:../../domains/orders
+      '@jburger/domain-payments':
+        specifier: workspace:*
+        version: link:../../domains/payments
       '@jburger/domain-permissions':
         specifier: workspace:*
         version: link:../../domains/permissions

@@ -109,8 +109,14 @@ export class OrdersController {
     return { data: order };
   }
 
-  /** Confirmación explícita (separada del checkout para que Pagos pueda gatearla). */
+  /**
+   * Confirmación manual de staff (p. ej. pago en mostrador). Desde el Bloque 5 la confirmación
+   * del cliente NO pasa por aquí: la dispara el pago aprobado dentro de la transacción de
+   * `apply_payment_transition`. Por eso exige `orders.write` y ya no admite al dueño del pedido.
+   */
   @Post(':id/confirm')
+  @UseGuards(PermissionGuard)
+  @RequirePermissions('orders.write')
   async confirm(
     @Tenant() tenantId: string | undefined,
     @CurrentUser() user: AuthorizationContext | undefined,

@@ -12,6 +12,13 @@ export const environmentSchema = z.object({
   SUPABASE_ANON_KEY: z.string().min(1).optional(),
   SUPABASE_SERVICE_ROLE_KEY: z.string().min(1).optional(),
   MAX_CART_ITEM_QUANTITY: z.coerce.number().int().min(1).max(99).default(20),
+  // Pagos: sin credenciales el módulo usa el proveedor mock (fail-fast en producción).
+  MERCADOPAGO_ACCESS_TOKEN: z.string().min(1).optional(),
+  MERCADOPAGO_WEBHOOK_SECRET: z.string().min(1).optional(),
+  /** URL pública de esta API: destino de las notificaciones del proveedor. */
+  PUBLIC_API_URL: z.url().default('http://localhost:3001'),
+  /** URL pública del frontend: destino del redirect posterior al pago. */
+  PUBLIC_APP_URL: z.url().default('http://localhost:3000'),
 });
 export type Environment = z.infer<typeof environmentSchema>;
 export const validateEnvironment = (config: Record<string, unknown>): Environment =>
