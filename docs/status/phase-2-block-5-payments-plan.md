@@ -1,4 +1,12 @@
-# Fase 2 — Bloque 5: Pagos / Mercado Pago (PROPUESTA — pendiente de aprobación)
+# Fase 2 — Bloque 5: Pagos / Mercado Pago (EN IMPLEMENTACIÓN — 2026-07-22)
+
+> Inicio autorizado por delegación de autonomía del responsable (2026-07-22), con las decisiones de
+> negocio ya confirmadas en §Decisiones. Paso 1 (migración `202607220010_payments_foundation.sql`,
+> aplicada a la DB) y Paso 2 (dominio `@jburger/domain-payments` con tests) completados; gate pendiente.
+> Ajuste de diseño respecto del plan: la confirmación del pedido viaja DENTRO de la transacción del
+> RPC `apply_payment_transition` (repositorio), no como puerto separado del dominio — no puede existir
+> pago aprobado sin intento de confirmación registrado (correctitud > pureza del puerto). El puerto
+> `PaymentOrderSource` queda de solo lectura para validar pagabilidad sin depender de domain-orders.
 
 Fecha: 2026-07-19. Base: ADR-024 (la confirmación del pedido quedó separada del checkout, preparada para gatearse por el pago), commerce-engine §8 (payment orchestration), decisión de negocio registrada en roadmap (proveedor = Mercado Pago).
 

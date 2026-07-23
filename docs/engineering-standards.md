@@ -21,6 +21,11 @@ Business vocabulary remains Spanish in domain contracts and user-facing concepts
 - Si el bloque modificó cualquier `package.json` del workspace, el gate obligatorio es `pnpm install && pnpm validate`. Ejecutar `pnpm validate` sin el install previo produce falsos negativos por links de workspace ausentes (incidente registrado en el Bloque 3 — Carrito, 2026-07-18).
 - Todo Acceptance Test se ejecuta con el pipeline ya en verde; nunca lo reemplaza.
 
+## Pipeline Failure Protocol
+
+- Ningún fallo de pipeline se corrige sin **reproducir el comando exacto** y capturar su salida (archivo, línea, regla). Las correcciones por hipótesis están prohibidas: el incidente de estabilización 2026-07-23 consumió dos rondas de hipótesis plausibles y se resolvió con un solo comando de reproducción.
+- Prohibido escribir la secuencia `*/` dentro de comentarios de bloque (p. ej. globs como `features/*/api.ts`): cierra el comentario y produce errores de parser engañosos. Usar prosa o notación sin asterisco-barra.
+
 ## Workspace Dependency Hygiene
 
 - Las dependencias `workspace:*` declaradas en cada `package.json` deben coincidir **exactamente** con los paquetes `@jburger/*` importados por ese paquete: ni de más (deps mentirosas / acoplamiento oculto) ni de menos (falla de resolución `TS2307`).

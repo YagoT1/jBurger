@@ -14,7 +14,7 @@ Actualizado: 2026-07-19. Fuente de verdad del orden de entrega. Cada bloque se c
 
 ## En curso
 
-7. **Pagos / Mercado Pago (Bloque 5)** (plan en `phase-2-block-5-payments-plan.md`; el ADR se numera al cierre del bloque) — dominio de pagos con puerto de proveedor abstracto, intentos idempotentes, ingesta de webhooks con verificación de firma; la confirmación del pedido pasa a estar gateada por el pago aprobado. **Plan preparado — pendiente de aprobación para implementar.**
+7. **Pagos / Mercado Pago (Bloque 5)** (plan en `phase-2-block-5-payments-plan.md`; el ADR se numera al cierre del bloque) — dominio de pagos con puerto de proveedor abstracto, intentos idempotentes, ingesta de webhooks con verificación de firma; la confirmación del pedido pasa a estar gateada por el pago aprobado. **Implementado completo (ADR-025): migración aplicada, dominio con tests, adaptador MP + mock, PaymentsModule y webhook verificado. Acceptance HTTP (PT-1..PT-10) pendiente únicamente de credenciales sandbox + URL pública.** El Bloque 6 tiene su Fase 0 completada: plataforma frontend por capas (`docs/architecture/frontend-architecture.md`), stubs users/roles → 501, pipeline estabilizado (`platform-stabilization-2026-07-23.md`). Fuente de verdad de producto migrada a `docs/product/`.
 8. **Frontend cliente (apps/web)** — menú + carrito + checkout consumiendo la API real; merge guest→login automático en el login.
 9. **Operación** — cocina (kitchen tickets), estados operativos de carrito/pedido (expire/abandon/recover del backlog), panel admin sobre CRUD ya existente.
 10. **Observabilidad productiva** — integrar `SupabaseAuditEventPublisher` como outbox de auditoría, correlation IDs end-to-end, métricas.
